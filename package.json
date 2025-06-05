@@ -1,6 +1,6 @@
 {
     "name": "martin-digital-library",
-    "version": "1.0.9",
+    "version": "1.0.10",
     "description": "Library containing relevant functions and logic for main website",
     "main": "index.js",
     "scripts": {
