@@ -78,12 +78,7 @@ export function customPlayButton() {
     let player;
     let isPlayerReady = false;
 
-    // Load YouTube IFrame API
-    const tag = document.createElement('script');
-    tag.src = 'https://www.youtube.com/iframe_api';
-    document.body.appendChild(tag);
-
-    // Expose the API init function globally
+    // ✅ Expose the API init function globally BEFORE loading the script
     window.onYouTubeIframeAPIReady = function () {
         player = new YT.Player('videoframe', {
             events: {
@@ -95,7 +90,12 @@ export function customPlayButton() {
         });
     };
 
-    // Safely bind play button after DOM is ready
+    // ✅ Now load the YouTube IFrame API
+    const tag = document.createElement('script');
+    tag.src = 'https://www.youtube.com/iframe_api';
+    document.body.appendChild(tag);
+
+    // Bind play button after DOM is ready
     document.addEventListener('DOMContentLoaded', () => {
         const playBtn = document.getElementById('play-btn');
 
