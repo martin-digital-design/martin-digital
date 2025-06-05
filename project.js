@@ -2,6 +2,7 @@ export function initProjectForm() {
     const steps = document.querySelectorAll(
         '.project-form-step, .project-form-template'
     );
+    const form = document.querySelector('.project-form');
     let currentStepIndex = 0;
     const transitionDuration = 250; // ms
 
@@ -46,7 +47,7 @@ export function initProjectForm() {
     };
 
     // Handle Next buttons
-    document.querySelectorAll('[data-action="next"]').forEach(button => {
+    form?.querySelectorAll('[data-action="next"]').forEach(button => {
         button.addEventListener('click', () => {
             const currentStep = steps[currentStepIndex];
 
@@ -74,7 +75,7 @@ export function initProjectForm() {
     });
 
     // Handle Previous buttons
-    document.querySelectorAll('[data-action="prev"]').forEach(button => {
+    form?.querySelectorAll('[data-action="prev"]').forEach(button => {
         button.addEventListener('click', () => {
             const currentStep = steps[currentStepIndex];
 
@@ -92,7 +93,6 @@ export function initProjectForm() {
     });
 
     // Optional: Final form validation
-    const form = document.querySelector('.project-form');
     form?.addEventListener('submit', e => {
         const currentStep = steps[currentStepIndex];
         if (!validateStep(currentStep)) {
