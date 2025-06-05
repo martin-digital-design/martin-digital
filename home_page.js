@@ -74,7 +74,7 @@ export function initTestimonialSlider() {
 }
 
 export function customPlayButton() {
-    //CUSTOM PLAY BUTTON
+    // CUSTOM PLAY BUTTON
     let player;
     let isPlayerReady = false;
 
@@ -83,8 +83,8 @@ export function customPlayButton() {
     tag.src = 'https://www.youtube.com/iframe_api';
     document.body.appendChild(tag);
 
-    // Create the player when API is ready
-    function onYouTubeIframeAPIReady() {
+    // Expose the API init function globally
+    window.onYouTubeIframeAPIReady = function () {
         player = new YT.Player('videoframe', {
             events: {
                 onReady: () => {
@@ -93,19 +93,26 @@ export function customPlayButton() {
                 },
             },
         });
-    }
+    };
 
     // Safely bind play button after DOM is ready
     document.addEventListener('DOMContentLoaded', () => {
         const playBtn = document.getElementById('play-btn');
 
+        if (!playBtn) {
+            console.warn('[customPlayButton] Play button not found');
+            return;
+        }
+
         playBtn.addEventListener('click', () => {
-            if (isPlayerReady && player.playVideo) {
+            if (isPlayerReady && typeof player.playVideo === 'function') {
                 try {
-                    player.playVideo(); // Start playing
+                    player.playVideo();
                 } catch (err) {
-                    console.error('Play failed:', err);
+                    console.error('[customPlayButton] Play failed:', err);
                 }
+            } else {
+                console.warn('[customPlayButton] Player not ready');
             }
         });
     });
