@@ -53,8 +53,8 @@ const planMaximums = {
 let userBudget = '0';
 
 const updateBodyOverflow = () => {
-    const anyVisible = [...quizSteps, resultStep].some(
-        step => step.style.display !== 'none'
+    const anyVisible = [...quizSteps, resultStep].some(step =>
+        step.classList.contains('active')
     );
     document.body.style.overflow = anyVisible ? 'hidden' : '';
 };
@@ -266,6 +266,8 @@ document.getElementById('quiz-close')?.addEventListener('click', () => {
         firstStep.style.display = 'flex';
         firstStep.style.opacity = 1;
     }
+
+    document.body.style.overflow = '';
 
     currentQuizStepIndex = 0;
 
