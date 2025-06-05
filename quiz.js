@@ -1,6 +1,8 @@
 export function initQuizForm() {
     const quizSteps = document.querySelectorAll('.quiz-form-step');
     const resultStep = document.querySelector('.quiz-form-result');
+    const form = document.querySelector('.quiz-form');
+
     let currentQuizStepIndex = 0;
     const transitionDuration = 250;
 
@@ -231,24 +233,26 @@ export function initQuizForm() {
             step.style.transition = '';
         });
 
-        document
-            .querySelectorAll('.quiz-form-step input[type="radio"]')
-            .forEach(input => {
+        form.querySelectorAll('.quiz-form-step input[type="radio"]').forEach(
+            input => {
                 input.checked = false;
-            });
+            }
+        );
 
-        document
-            .querySelectorAll('.w-form-formradioinput.w--redirected-checked')
-            .forEach(el => {
-                el.classList.remove('w--redirected-checked');
-            });
+        form.querySelectorAll(
+            '.w-form-formradioinput.w--redirected-checked'
+        ).forEach(el => {
+            el.classList.remove('w--redirected-checked');
+        });
 
-        document
-            .querySelector('#templates-button')
-            ?.style.setProperty('display', 'none');
-        document
-            .querySelector('#bespoke-button')
-            ?.style.setProperty('display', 'none');
+        form.querySelector('#templates-button')?.style.setProperty(
+            'display',
+            'none'
+        );
+        form.querySelector('#bespoke-button')?.style.setProperty(
+            'display',
+            'none'
+        );
 
         const resultParagraph = resultStep.querySelector('p');
         if (resultParagraph) {
