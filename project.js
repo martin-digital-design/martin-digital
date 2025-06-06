@@ -1,7 +1,5 @@
 export function initProjectForm() {
-    const steps = document.querySelectorAll(
-        '.project-form-step, .project-form-template'
-    );
+    const steps = document.querySelectorAll('.project-form-step');
     const form = document.querySelector('.project-form');
     let currentStepIndex = 0;
     const transitionDuration = 250; // ms
@@ -53,20 +51,6 @@ export function initProjectForm() {
 
             if (!validateStep(currentStep)) return;
 
-            // Step 0 logic: check for template selection
-            if (currentStepIndex === 0) {
-                const selected = currentStep
-                    .querySelector('input[name="websiteType"]:checked')
-                    ?.value.toLowerCase();
-                if (selected.includes('template')) {
-                    const templateStep = document.querySelector(
-                        '.project-form-template'
-                    );
-                    showStep(templateStep);
-                    return;
-                }
-            }
-
             const nextIndex = currentStepIndex + 1;
             if (nextIndex < steps.length) {
                 showStep(nextIndex);
@@ -77,14 +61,6 @@ export function initProjectForm() {
     // Handle Previous buttons
     form?.querySelectorAll('[data-action="prev"]').forEach(button => {
         button.addEventListener('click', () => {
-            const currentStep = steps[currentStepIndex];
-
-            // Special case: template step always goes back to Step 0
-            if (currentStep.classList.contains('project-form-template')) {
-                showStep(0);
-                return;
-            }
-
             const prevIndex = currentStepIndex - 1;
             if (prevIndex >= 0) {
                 showStep(prevIndex);
