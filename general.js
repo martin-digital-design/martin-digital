@@ -146,7 +146,7 @@ export function initResourcesSwiper() {
 
 export function initProjectSwiper() {
     //PROJECT SLIDER
-    const project_swiper = new Swiper('.swiper', {
+    const project_swiper = new Swiper('.projects-swiper', {
         // Optional parameters
         direction: 'horizontal',
         watchSlidesVisibility: true,
