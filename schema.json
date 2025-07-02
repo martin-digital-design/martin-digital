@@ -1,0 +1,122 @@
+{
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Martin Digital",
+    "url": "https://www.martindigital.design",
+    "logo": "https://cdn.prod.website-files.com/6839b8dfc8f318a9177a26f7/685058970a5603e2e47e124c_Square%20logo%402x.png",
+    "description": "Martin Digital offers professional web design services in Leicester, creating custom websites for local businesses.",
+    "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "12 Iris Avenue, Glen Parva",
+        "addressLocality": "Leicester",
+        "postalCode": "LE2 9JJ",
+        "addressCountry": "GB"
+    },
+    "telephone": "0116 402 9111",
+    "email": "contact@martindigital.design",
+    "areaServed": "Leicester",
+    "openingHours": "Mo-Sa 09:00-18:00",
+    "sameAs": [
+        "https://www.linkedin.com/company/martin-digital-design/",
+        "https://g.co/kgs/knCSmG9"
+    ],
+    "priceRange": "£500-£10,000",
+    "image": "https://cdn.prod.website-files.com/6839b8dfc8f318a9177a26f7/6842eedc66a701ada97da61b_Banner%20(sompany)%202.png",
+    "serviceType": "Web Design",
+    "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Web Design Packages",
+        "itemListElement": [
+            {
+                "@type": "Offer",
+                "itemOffered": {
+                    "@type": "Service",
+                    "name": "Starter Website",
+                    "description": "A simple, effective starter website ideal for small businesses.",
+                    "areaServed": "Leicester"
+                },
+                "priceSpecification": {
+                    "@type": "PriceSpecification",
+                    "priceCurrency": "GBP",
+                    "minPrice": "500",
+                    "maxPrice": "750"
+                }
+            },
+            {
+                "@type": "Offer",
+                "itemOffered": {
+                    "@type": "Service",
+                    "name": "Growth Website",
+                    "description": "A scalable website with advanced features for growing businesses.",
+                    "areaServed": "Leicester"
+                },
+                "priceSpecification": {
+                    "@type": "PriceSpecification",
+                    "priceCurrency": "GBP",
+                    "minPrice": "750",
+                    "maxPrice": "1200"
+                }
+            },
+            {
+                "@type": "Offer",
+                "itemOffered": {
+                    "@type": "Service",
+                    "name": "Bespoke Website",
+                    "description": "A fully custom website tailored to your exact needs.",
+                    "areaServed": "Leicester"
+                },
+                "priceSpecification": {
+                    "@type": "PriceSpecification",
+                    "priceCurrency": "GBP",
+                    "minPrice": "1200"
+                }
+            }
+        ]
+    },
+    "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5",
+        "reviewCount": "4"
+    },
+    "review": [
+        {
+            "@type": "Review",
+            "author": {
+                "@type": "Person",
+                "name": "Mark Leckenby"
+            },
+            "reviewBody": "Its been great working with Joel on our website, he has great ideas and we get such good feedback on our website",
+            "reviewRating": {
+                "@type": "Rating",
+                "ratingValue": "5",
+                "bestRating": "5"
+            }
+        },
+        {
+            "@type": "Review",
+            "author": {
+                "@type": "Person",
+                "name": "Harman Singh"
+            },
+            "reviewBody": "From the very first meeting, it was clear I was in capable hands. The new website not only looks fantastic, it’s genuinely helped us generate better enquiries. The process was smooth, clear, and far less stressful than I expected.",
+            "reviewRating": {
+                "@type": "Rating",
+                "ratingValue": "5",
+                "bestRating": "5"
+            }
+        },
+        {
+            "@type": "Review",
+            "author": {
+                "@type": "Person",
+                "name": "Rupinder Singh"
+            },
+            "reviewBody": "The clarity and confidence Joel brought to the project made all the difference. We didn’t just end up with a better-looking website — we gained a tool that actively supports our sales process. It’s streamlined, strategic, and genuinely reflects who we are.",
+            "reviewRating": {
+                "@type": "Rating",
+                "ratingValue": "5",
+                "bestRating": "5"
+            }
+        }
+    ]
+}
