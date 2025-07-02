@@ -159,11 +159,11 @@ export function initProjectSwiper() {
         },
 
         slidesPerView: 1,
-        spaceBetween: 16,
+        spaceBetween: 32,
         breakpoints: {
             992: {
                 slidesPerView: 1,
-                spaceBetween: 32,
+                spaceBetween: 64,
             },
         },
     });
