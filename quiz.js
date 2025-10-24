@@ -157,6 +157,8 @@ export function initQuizForm() {
                 b[1] > a[1] ? b : a
             )[0];
 
+            console.log(highest);
+
             const heading = resultStep.querySelector('h3');
             if (heading) {
                 heading.textContent = formatResultTitle(highest);
