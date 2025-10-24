@@ -257,8 +257,8 @@ export function initQuizForm() {
             resultParagraph.textContent = '';
         }
 
-        categoryScores.starter = 0;
-        categoryScores.growth = 0;
+        categoryScores.essentials = 0;
+        categoryScores.standard = 0;
         categoryScores.bespoke = 0;
         userBudget = '0';
 
