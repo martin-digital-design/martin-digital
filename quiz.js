@@ -7,33 +7,35 @@ export function initQuizForm() {
     const transitionDuration = 250;
 
     const categoryScores = {
-        starter: 0,
-        growth: 0,
+        essentials: 0,
+        standard: 0,
         bespoke: 0,
     };
 
     const formatResultTitle = key => {
         switch (key) {
-            case 'starter':
-                return 'Starter Template Website';
-            case 'growth':
-                return 'Growth Template Website';
+            case 'essentials':
+                return 'Business Essentials Website';
+            case 'standard':
+                return 'Business Standard Website';
             case 'bespoke':
-                return 'Premium Bespoke Website';
+                return 'Business Bespoke Website';
             default:
                 return '';
         }
     };
 
     const planDescriptions = {
-        starter:
-            "Our Starter Template Website is ideal for smaller businesses who want a clean, simple site quickly and affordably. It's flexible enough to grow with you later.",
-        growth: 'The Growth Template Website is perfect for businesses that need more flexibility, SEO support, and room for ongoing expansion.',
+        essentials:
+            'Ideal for businesses that need a professional website, fast with a basic page structure and online setup.',
+        standard:
+            'Ideal for businesses that want a conversion focused website that’s built to grow.',
         bespoke:
-            'Our Bespoke Website option is tailored from the ground up – ideal for businesses that need a unique brand experience, complex features, or custom integrations.',
+            'Ideal for businesses that need a bespoke, high performing site tailored to unique goals.',
     };
 
     const budgetNumericValue = {
+        //maximum that the client will pay
         '<500': 400,
         '500-750': 750,
         '750-1200': 1200,
@@ -42,14 +44,14 @@ export function initQuizForm() {
     };
 
     const planMinimums = {
-        starter: 1,
-        growth: 751,
+        essentials: 501,
+        standard: 751,
         bespoke: 1201,
     };
 
     const planMaximums = {
-        starter: 750,
-        growth: 1200,
+        essentials: 750,
+        standard: 1200,
         bespoke: Infinity,
     };
 
@@ -120,8 +122,8 @@ export function initQuizForm() {
             const currentStep = quizSteps[currentQuizStepIndex];
             if (!validateQuizStep(currentStep)) return;
 
-            categoryScores.starter = 0;
-            categoryScores.growth = 0;
+            categoryScores.essentials = 0;
+            categoryScores.standard = 0;
             categoryScores.bespoke = 0;
             userBudget = '0';
 
@@ -137,9 +139,9 @@ export function initQuizForm() {
                     }
 
                     if (['<500', '500-750'].includes(value)) {
-                        categoryScores.starter++;
+                        categoryScores.essentials++;
                     } else if (value === '750-1200') {
-                        categoryScores.growth++;
+                        categoryScores.standard++;
                     } else if (value === '>1200') {
                         categoryScores.bespoke++;
                     } else {
@@ -160,18 +162,12 @@ export function initQuizForm() {
                 heading.textContent = formatResultTitle(highest);
             }
 
-            const templatesBtn = resultStep.querySelector('#templates-button');
-            const bespokeBtn = resultStep.querySelector('#bespoke-button');
-            if (templatesBtn)
-                templatesBtn.style.display =
-                    highest === 'starter' || highest === 'growth'
-                        ? 'inline-block'
-                        : 'none';
-            if (bespokeBtn)
-                bespokeBtn.style.display =
-                    highest === 'bespoke' ? 'inline-block' : 'none';
+            const websiteBtn = resultStep.querySelector('#website-button');
+
+            if (websiteBtn) websiteBtn.style.display = 'inline-block';
 
             const resultParagraph = resultStep.querySelector('p');
+
             if (resultParagraph) {
                 let message = planDescriptions[highest] || '';
 
