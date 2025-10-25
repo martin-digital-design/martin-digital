@@ -212,9 +212,9 @@ export function initResourcesSwiper() {
         slidesPerView: 1,
         spaceBetween: 16,
         breakpoints: {
-            992: {
-                slidesPerView: 1,
-                spaceBetween: 16,
+            1200: {
+                slidesPerView: 2,
+                spaceBetween: 32,
             },
         },
 
